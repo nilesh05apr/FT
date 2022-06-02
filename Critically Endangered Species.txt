@@ -1,0 +1,234 @@
+﻿1. Sumatran rhinoceros
+2. Eastern black rhinoceros
+3. South-central black rhinoceros
+4. African wild donkey
+5. Javan rhinoceros
+6. Tonkin black crested gibbon
+7. West Yunnan black crested gibbon
+8. Central Yunnan black crested gibbon
+9. Laotian black crested gibbon
+10. Hainan black crested gibbon
+11. Northern white-cheeked gibbon
+12. Eastern black crested gibbon
+13. Eastern lowland gorilla
+14. Cross River gorilla
+15. Western lowland gorilla
+16. Sumatran orangutan
+17. Bornean orangutan
+18. Northeast Bornean orangutan
+19. Northwest Bornean orangutan
+20. Southwest Bornean orangutan
+21. Tapanuli orangutan
+22. Sibree's dwarf lemur
+23. Gray-headed lemur
+24. Blue-eyed black lemur
+25. Mongoose lemur
+26. Lac Alaotra bamboo lemur
+27. Golden bamboo lemur
+28. Indri
+29. Manombo sportive lemur
+30. Sahamalaza sportive lemur
+31. Northern sportive lemur
+32. Hawks' sportive lemur
+33. Gerp's mouse lemur
+34. Marohita mouse lemur
+35. Greater bamboo lemur
+36. Silky sifaka
+37. Diademed sifaka
+38. Perrier's sifaka
+39. Golden-crowned sifaka
+40. Red ruffed lemur
+41. Black-and-white ruffed lemur
+42. Indri
+43. Southern black-and-white ruffed lemur
+44. Northern black-and-white ruffed lemur
+45. Pied black-and-white ruffed lemur
+46. Siau Island tarsier
+47. Natuna Islands tarsier
+48. Celebes crested macaque
+49. Pagai Island macaque
+50. Niger Delta red colobus
+51. Preuss's red colobus
+52. Miss Waldron's red colobus
+53. Sarawak surili
+54. Gray-shanked douc
+55. Tonkin snub-nosed monkey
+56. Myanmar snub-nosed monkey
+57. Pig-tailed langur
+58. Delacour's langur
+59. White-headed langur
+60. Zammarano's monkey
+61. Presbytis chrysomelas chrysomelas
+62. Tricolored langur
+63. Golden-bellied Mentawai Island langur
+64. Pagai Island pig-tailed snub-nosed monkey
+65. Siberut Island pig-tailed snub-nosed monkey
+66. Natuna Islands silvery lutung
+67. White-headed black langur
+68. Cat Ba langur
+69. Western purple-faced langur
+70. Brown spider monkey
+71. Northern muriqui
+72. Blond titi monkey
+73. Caquetá titi
+74. Rio Mayo titi
+75. Ecuadorian white-fronted capuchin
+76. Kaapori capuchin
+77. Black bearded saki
+78. Colombian woolly monkey
+79. Superagui lion tamarin
+80. Yellow-tailed woolly monkey
+81. Cotton-top tamarin
+82. Golden-bellied capuchin
+83. Northern brown howler
+84. Mexican howler
+85. Azuero howler
+86. Brown-headed spider monkey
+87. Colombian spider monkey
+88. Azuero spider monkey
+89. Nicaraguan spider monkey
+90. Mexican spider monkey
+91. Ateles hybridus brunneus
+92. Hybrid spider monkey
+93. Margarita Island capuchin
+94. Javan slow loris
+95. Addax
+96. Bawean deer
+97. Hirola
+98. Tamaraw
+99. Wild Bactrian camel
+100. Giant muntjac
+101. Dama gazelle
+102. Saola
+103. Saiga antelope
+104. Visayan warty pig
+105. Tora hartebeest
+106. Giant sable antelope
+107. Upemba lechwe
+108. Russian saiga
+109. Western giant eland
+110. Mountain bongo
+111. Kordofan giraffe
+112. Nubian giraffe
+113. Vaquita
+114. Rice's whale
+115. North Atlantic Right Whale
+116. Atlantic Humpback Dolphin
+117. Popoto
+118. Yangtze finless porpoise
+119. Talaud bear cuscus
+120. Woylie
+121. Mountain pygmy possum
+122. Wondiwoi tree-kangaroo
+123. Golden-mantled tree-kangaroo
+124. Tenkile
+125. Black dorcopsis
+126. Leadbeater's possum
+127. Northern hairy-nosed wombat
+128. Handley's slender opossum
+129. Northern glider
+130. Gilbert's potoroo
+131. Kangaroo Island dunnart
+132. Black-spotted cuscus
+133. Blue-eyed spotted cuscus
+134. Red wolf
+135. European mink
+136. Cozumel raccoon
+137. Northwest African cheetah
+138. Asiatic cheetah
+139. Balkan lynx
+140. Malayan tiger
+141. Sunda Island tiger
+142. Sumatran tiger
+143. Indochinese leopard
+144. Javan leopard
+145. Arabian leopard
+146. Amur leopard
+147. Anatolian leopard
+148. Iriomote cat
+149. Phillips' Congo shrew
+150. Andaman shrew
+151. Harenna shrew
+152. Jenkins' shrew
+153. Nicobar shrew
+154. Wimmer's shrew
+155. Nelson's small-eared shrew
+156. Eisentraut's mouse shrew
+157. Sclater's shrew
+158. San Cristobal shrew
+159. Taita shrew
+160. Riverine rabbit
+161. San Jose brush rabbit
+162. Bolivian chinchilla rat
+163. Santa Catarina's guinea pig
+164. Reig's tuco-tuco
+165. Roig's tuco-tuco
+166. Social tuco-tuco
+167. Mexican agouti
+168. Pacific degu
+169. Mantiqueira Atlantic tree-rat
+170. Short-furred Atlantic tree-rat
+171. Red-crested tree rat
+172. Golden vizcacha rat
+173. Chalchalero viscacha rat
+174. Heavenly hill rat
+175. Elvira rat
+176. Mount Oku hylomyscus
+177. Manusela mosaic-tailed rat
+178. Kondana soft-furred rat
+179. Poncelet's giant rat
+180. Muennink's spiny rat
+181. Biak giant rat
+182. Carpentarian rock rat
+183. Central rock rat
+184. Chinanteco deer mouse
+185. Delicate deer mouse
+186. Ixtlán deer mouse
+187. Zempoaltepec deer mouse
+188. Habromys schmidlyi
+189. Bavarian pine vole
+190. Nelson's woodrat
+191. Perote mouse
+192. Burt's deer mouse
+193. Dickey's deer mouse
+194. San Lorenzo mouse
+195. Maya mouse
+196. False canyon mouse
+197. Catalina deer mouse
+198. San Esteban Island mouse
+199. Cozumel harvest mouse
+200. Chiapan climbing rat
+201. Tumbala climbing rat
+202. Mount Kahuzi climbing mouse
+203. San Quintin kangaroo rat
+204. Tropical pocket gopher
+205. Big pocket gopher
+206. Alcorn's pocket gopher
+207. Namdapha flying squirrel
+208. Vancouver Island marmot
+209. Bulmer's fruit bat (Aproteles bulmerae)
+210. Seychelles sheath-tailed bat (Coleura seychellensis)
+211. Philippine naked-backed fruit bat (Dobsonia chapmani)
+212. Thongaree’s disc-nosed bat (Eudiscoderma thongareeae)
+213. Kolar leaf-nosed bat (Hipposideros hypophyllus)
+214. Lamotte's roundleaf bat (Hipposideros lamottei)
+215. Fijian monkey-faced bat (Mirimiri acrodonta)
+216. Bala tube-nosed bat (Murina balaensis)
+217. Armenian whiskered bat (Myotis hajastanicus)
+218. Yanbaru whiskered bat (Myotis yanbarensis)
+219. Jamaican greater funnel-eared bat (Natalus jamaicensis)
+220. New Caledonian long-eared bat (Nyctophilus nebulosus)
+221. Jamaican flower bat (Phyllonycteris aphylla)
+222. Greater monkey-faced bat (Pteralopex flanneryi)
+223. Livingstone's fruit bat (Pteropus livingstonii)
+224. Vanikoro flying fox (Pteropus tuberculatus)
+225. Hill's horseshoe bat (Rhinolophus hilli)
+226. African forest elephant
+227. Pygmy three-toed sloth
+228. Sunda pangolin
+229. Chinese pangolin
+230. Jayapuran long-beaked echidna
+231. Bird's Head long-beaked echidna
+232. Sumatran elephant
+
+
