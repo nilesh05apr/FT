@@ -3,6 +3,8 @@ import pandas as pd
 import os
 from dotenv import main
 import time
+import pickle
+
 def configure():
     main.load_dotenv()
 configure()
@@ -39,7 +41,11 @@ def get_tweets_for_keyword(q, max_tweets=1000):
             user_id_list.append(tweet.user.id_str)
             user_name_list.append(tweet.user.name)
 
-
+        data = {'created_at': created_at_list,
+                'id': id_str_list, 
+                'text': text_list, 
+                'user_id': user_id_list, 
+                'user_name': user_name_list,}
         # Create a Pandas DataFrame from the data.
         df = pd.DataFrame({'created_at': created_at_list,
                                 'id': id_str_list, 
@@ -49,7 +55,7 @@ def get_tweets_for_keyword(q, max_tweets=1000):
                                 })
 
         tweets_file_name = "tweets_" + q.replace(" ", "_") + ".csv"
-        return df
+        return data
     except tweepy.errors.TweepyException as err:
         print(err)
 
@@ -66,7 +72,7 @@ with open('Critically Endangered Species.txt','r') as f:
         t = t.replace('.','')
         CES.append(t)
 f.close()
-print(CES[0])
+#print(CES[0])
 
 
 
@@ -79,7 +85,7 @@ with open('Possibly Extinct.txt','r') as f:
         t = t.replace('.','')
         PES.append(t)
 f.close()
-print(PES[0])
+#print(PES[0])
 
 
 
@@ -92,16 +98,65 @@ with open('Vulnerable Species.txt','r') as f:
         t = t.replace('.','')
         VS.append(t)
 f.close()
-print(VS[0])
+#print(VS[0])
 
 
-CES_Tweets = {}
-for species in CES:
-    start = time.process_time()
-    tweets = get_tweets_for_keyword(species,100)
-    end = time.process_time()
-    print(species,(end-start))
-    CES_Tweets[species] = tweets
+def get_ces_tweets(CES_Tweets):
+    for species in CES:
+        start = time.process_time()
+        tweets = get_tweets_for_keyword(species,1000)
+        end = time.process_time()
+        print("Time taken by:{} is {}s".format(species,(end-start)))
+        CES_Tweets[species] = tweets
+        time.sleep(10)
+    return CES_Tweets
+
+def get_vs_tweets(VS_Tweets):
+    for species in VS:
+        start = time.process_time()
+        tweets = get_tweets_for_keyword(species,1000)
+        end = time.process_time()
+        print("Time taken by:{} is {}s".format(species,(end-start)))
+        VS_Tweets[species] = tweets
+        time.sleep(10)
+    return VS_Tweets
+
+def get_pes_tweets(PES_Tweets):
+    for species in PES:
+        start = time.process_time()
+        tweets = get_tweets_for_keyword(species,1000)
+        end = time.process_time()
+        print("Time taken by:{} is {}s".format(species,(end-start)))
+        PES_Tweets[species] = tweets
+        time.sleep(10)
+    return PES_Tweets
 
 
-print(CES_Tweets)
+def main():
+    CES_Tweets = {}
+    ces_tweets_ = get_ces_tweets(CES_Tweets)
+    VS_Tweets = {}
+    vs_tweets_ = get_vs_tweets(VS_Tweets)
+    PES_Tweets = {}
+    pes_tweets_ = get_pes_tweets(PES_Tweets)
+
+
+#print(CES_Tweets)
+
+if __name__ == '__main__':
+    CES_Tweets = {}
+    ces_tweets = get_ces_tweets(CES_Tweets)
+    with open('CesTweets.pkl','wb') as f:
+        pickle.dump(ces_tweets,f)
+
+    VS_Tweets = {}
+    vs_tweets_ = get_vs_tweets(VS_Tweets)
+    with open('VsTweets.pkl','wb') as f:
+        pickle.dump(vs_tweets_,f)
+
+    PES_Tweets = {}
+    pes_tweets_ = get_pes_tweets(PES_Tweets)
+    with open('PesTweets.pkl','wb') as f:
+        pickle.dump(pes_tweets_,f)
+
+    
