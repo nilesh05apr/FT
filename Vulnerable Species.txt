@@ -478,7 +478,7 @@
 478. Mohave ground squirrel
 479. Balochistan forest dormouse
 480. Roach's mouse-tailed dormouse
-481. 482. Sulawesi flying fox
+481. Sulawesi flying fox
 483. Palawan fruit bat
 484. Sunda flying fox
 485. Biak naked-backed fruit bat
@@ -591,4 +591,3 @@
 593. Grey-faced sengi
 594. Brazilian three-banded armadillo
 595. Eastern long-beaked echidna
-596.

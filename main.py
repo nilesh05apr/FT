@@ -19,50 +19,9 @@ api = tweepy.API(auth)
 
 
 
-def get_tweets_for_keyword(q, max_tweets=1000):
-    """This function gets tweets for a particular keyword"""
-    created_at_list = []
-    id_str_list = []
-    text_list = []
-    user_id_list = []
-    user_name_list = []
-
-    try:
-        for tweet in tweepy.Cursor(api.search_tweets,
-                                   q=q,
-                                   count=100,
-                                   result_type="recent",
-                                   include_entities=True,
-                                   lang="en").items(max_tweets):
-
-            created_at_list.append(tweet.created_at)
-            id_str_list.append(tweet.id_str)
-            text_list.append(tweet.text)
-            user_id_list.append(tweet.user.id_str)
-            user_name_list.append(tweet.user.name)
-
-        data = {'created_at': created_at_list,
-                'id': id_str_list, 
-                'text': text_list, 
-                'user_id': user_id_list, 
-                'user_name': user_name_list,}
-        # Create a Pandas DataFrame from the data.
-        df = pd.DataFrame({'created_at': created_at_list,
-                                'id': id_str_list, 
-                                'text': text_list, 
-                                'user_id': user_id_list, 
-                                'user_name': user_name_list, 
-                                })
-
-        tweets_file_name = "tweets_" + q.replace(" ", "_") + ".csv"
-        return data
-    except tweepy.errors.TweepyException as err:
-        print(err)
 
 
 
-new_df = get_tweets_for_keyword('Sumatran rhinoceros',max_tweets=5)
-print(new_df)
 
 CES = [] #critically endangered species
 with open('Critically Endangered Species.txt','r') as f:
@@ -101,62 +60,66 @@ f.close()
 #print(VS[0])
 
 
-def get_ces_tweets(CES_Tweets):
-    for species in CES:
+def get_tweets(query):
+    query = query + "-filter:retweets"
+    tweets = tweepy.Cursor(api.search,q=query,lang="en").items(10)
+    tw_copy = []
+    for tweet in tweets:
+        tw_copy.append(tweet)
+    print(f"{len(tw_copy)} tweets found for {query}")
+    return tw_copy
+
+def get_tweet_df(species):
+    tweets_df = pd.DataFrame()
+    for s in species:
         start = time.process_time()
-        tweets = get_tweets_for_keyword(species,1000)
+        tweets_copy = get_tweets(s)
         end = time.process_time()
-        print("Time taken by:{} is {}s".format(species,(end-start)))
-        CES_Tweets[species] = tweets
-        time.sleep(10)
-    return CES_Tweets
+        print(f"Time for keyword {s}: {end-start}")
+        # time.sleep(10)
+        if len(tweets_copy) >= 1000:
+          SLEEP_TIME = 120
+        elif len(tweets_copy) >= 100:
+          SLEEP_TIME = 30
+        else:
+          SLEEP_TIME = 15
+        for tweet in tweets_copy:
+            hashtags = []
+            try:
+                for hashtag in tweet.entities["hashtags"]:
+                    hashtags.append(hashtag)
+                text = api.get_status(id=tweet.id, tweet_mode='extended').full_text
+            except:
+                pass
 
-def get_vs_tweets(VS_Tweets):
-    for species in VS:
-        start = time.process_time()
-        tweets = get_tweets_for_keyword(species,1000)
-        end = time.process_time()
-        print("Time taken by:{} is {}s".format(species,(end-start)))
-        VS_Tweets[species] = tweets
-        time.sleep(10)
-    return VS_Tweets
+            if tweet.coordinates != None:
+              coord = tweet.coordinates['coordinates']
+            else:
+              coord = None
 
-def get_pes_tweets(PES_Tweets):
-    for species in PES:
-        start = time.process_time()
-        tweets = get_tweets_for_keyword(species,1000)
-        end = time.process_time()
-        print("Time taken by:{} is {}s".format(species,(end-start)))
-        PES_Tweets[species] = tweets
-        time.sleep(10)
-    return PES_Tweets
+            tweets_df = pd.concat([tweets_df,pd.DataFrame({
+                'user_name': tweet.user.name,
+                "user_description": tweet.user.description,
+                "user_location": tweet.user.location,
+                "user_verification": tweet.user.verified,
+                "date": tweet.created_at,
+                "text": text,
+                "hashtags": [hashtags if hashtags else None],
+                "source": tweet.source,
+                "retweets": tweet.retweet_count
+                })],axis=0)
 
-
-def main():
-    CES_Tweets = {}
-    ces_tweets_ = get_ces_tweets(CES_Tweets)
-    VS_Tweets = {}
-    vs_tweets_ = get_vs_tweets(VS_Tweets)
-    PES_Tweets = {}
-    pes_tweets_ = get_pes_tweets(PES_Tweets)
+            tweets_df = tweets_df.reset_index(drop=True)
+        time.sleep(SLEEP_TIME)
+    return tweets_df
 
 
-#print(CES_Tweets)
+# Tweets_C = get_tweet_df(CES)
+# Tweets_C.to_csv("Tweets_CE_Species.csv")
 
-if __name__ == '__main__':
-    CES_Tweets = {}
-    ces_tweets = get_ces_tweets(CES_Tweets)
-    with open('CesTweets.pkl','wb') as f:
-        pickle.dump(ces_tweets,f)
+# Tweets_V = get_tweet_df(VS)
+# Tweets_V.to_csv("Tweets_V_species.csv")
 
-    VS_Tweets = {}
-    vs_tweets_ = get_vs_tweets(VS_Tweets)
-    with open('VsTweets.pkl','wb') as f:
-        pickle.dump(vs_tweets_,f)
-
-    PES_Tweets = {}
-    pes_tweets_ = get_pes_tweets(PES_Tweets)
-    with open('PesTweets.pkl','wb') as f:
-        pickle.dump(pes_tweets_,f)
-
+# Tweets_E = get_tweet_df(PES)
+# Tweets_E.to_csv("Tweets_PE_species.csv")
     
